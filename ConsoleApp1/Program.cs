@@ -15,7 +15,7 @@ using System.Collections.Generic;
  */
 class Dier
 {
-    public string? Naam;
+    public string Naam;
     public int Gewicht = 0;
 }
 
@@ -43,11 +43,12 @@ class Vogel<T, S>(T naam, S gewicht, S leeftijd)
 
 class Program
 {
-    public static void Main(string[] args)
+    public static async Task Main(string[] args)
     {
         //Methode1();
         //Methode2();
-        Methode3();
+        //Methode3();
+        await Methode4Async();
     }
     static void Method(Reptiel a)
     {
@@ -90,5 +91,28 @@ class Program
         Vector c = a / b;
         Console.WriteLine(c.X);
         Console.WriteLine();
+    }
+
+    static async Task Methode4Async()
+    {
+
+        Task task1 = Bericht1();
+        Task task2 = Bericht2();
+        //await Bericht1();
+        //await Bericht2();
+        await Task.WhenAll(task1, task2);
+    }
+    static async Task Bericht1()
+    {
+        Console.WriteLine("In bericht 1");
+        await Task.Delay(2000);
+        Console.WriteLine("In bericht 1 klaar");
+    }
+
+    static async Task Bericht2()
+    {
+        Console.WriteLine("In bericht 2");
+        await Task.Delay(2000);
+        Console.WriteLine("In bericht 2 klaar");
     }
 }
