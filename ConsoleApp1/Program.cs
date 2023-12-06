@@ -3,6 +3,7 @@
 namespace ConsoleApp1;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 //Extension Method Gewicht
 //Lijst van Dieren en een apartelijst van zoogdieren
@@ -48,7 +49,8 @@ class Program
         //Methode1();
         //Methode2();
         //Methode3();
-        await Methode4Async();
+        //await Methode4Async();
+        Methode5();
     }
     static void Method(Reptiel a)
     {
@@ -114,5 +116,34 @@ class Program
         Console.WriteLine("In bericht 2");
         await Task.Delay(2000);
         Console.WriteLine("In bericht 2 klaar");
+    }
+
+    static void Methode5()
+    {
+        //Dit is een voorbeeld van empty sequence
+        var empty = Enumerable.Empty<string>();
+        // To make sequence into an array use empty.ToArray()
+        bool stuff = empty.Count() == 0;
+        Console.WriteLine("Sequence is empty: " + stuff);
+
+        //Dit is een voorbeeld van Max
+        int[] numbers = { 2, 8, 5, 6, 1 };
+
+        var result = numbers.Max();
+
+        Console.WriteLine("Highest number is: " + result);
+
+        //Dit is een voorbeeld van Min
+        int[] numbers2 = { 2, 8, 5, 6, 1 };
+
+        var result2 = numbers2.Min();
+        Console.WriteLine("Lowest number is: " + result2);
+
+        //Dit is een voorbeeld van Last
+        int[] numbers3 = { 7, 3, 5 };
+
+        var result3 = numbers3.Last();
+
+        Console.WriteLine("Last number in array is: " + result3);
     }
 }
