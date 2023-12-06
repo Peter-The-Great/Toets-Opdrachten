@@ -16,7 +16,7 @@ using System.Linq;
  */
 class Dier
 {
-    public string Naam;
+    public string? Naam;
     public int Gewicht = 0;
 }
 
