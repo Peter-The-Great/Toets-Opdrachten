@@ -46,6 +46,12 @@ class Program
     public static void Main(string[] args)
     {
         //Methode1();
+        //Methode2();
+        Methode3();
+    }
+    static void Method(Reptiel a)
+    {
+        Console.WriteLine("Type van deze class is: " + a.GetType());
     }
 
     static void Methode1()
@@ -67,14 +73,22 @@ class Program
         //Contravariance
         MyDelegate del = new MyDelegate(Method);
         del(new Krokodil());
-    }
-    static void Method(Reptiel a)
-    {
-        Console.WriteLine("Type van deze class is: " + a.GetType());
+
+        Console.WriteLine();
     }
     static void Methode2()
     {
         Car auto = new Car(new GasolineEngine());
         auto.Start();
+        Console.WriteLine();
+    }
+    static void Methode3()
+    {
+
+        Vector a = new Vector { X = 1, Y = 2 };
+        Vector b = new Vector { X = 3, Y = 4 };
+        Vector c = a / b;
+        Console.WriteLine(c.X);
+        Console.WriteLine();
     }
 }
