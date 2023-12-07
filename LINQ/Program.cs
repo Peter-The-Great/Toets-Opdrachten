@@ -1,4 +1,4 @@
-»¿using System;
+using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.Numerics;
@@ -69,18 +69,18 @@ public class Program
 
     static void Main(string[] args)
     {
-        //Opdracht1();
-        //Console.WriteLine();
-        //Opdracht2();
-        //Console.WriteLine();
-        //Opdracht3();
-        //Console.WriteLine();
-        //Opdracht4();
-        //Console.WriteLine();
-        //Opdracht5();
-        //Console.WriteLine();
-        //Opdracht6();
-        //Console.WriteLine();
+        Opdracht1();
+        Console.WriteLine();
+        Opdracht2();
+        Console.WriteLine();
+        Opdracht3();
+        Console.WriteLine();
+        Opdracht4();
+        Console.WriteLine();
+        Opdracht5();
+        Console.WriteLine();
+        Opdracht6();
+        Console.WriteLine();
         Opdracht7();
     }
 
@@ -122,6 +122,6 @@ public class Program
 
     static void Opdracht7() // Wat is het 1000e Fibonacci getal?
     {
-        Console.WriteLine(Fibonacci().ToList().ElementAt(1000 - 1));
+        Console.WriteLine(Fibonacci().ElementAt(1000 - 1));
     }
 }
