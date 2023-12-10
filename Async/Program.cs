@@ -1,14 +1,16 @@
 ﻿using System.Threading.Tasks;
+namespace Async;
 class Program
 {
     static async Task Main(string[] args)
     {
-        await DoSomethingAsync();
+        /*await DoSomethingAsync();
         await Task.Run(() => Console.WriteLine("Hello, world!"));
         await Bericht1();
         SyncFunction();
         await Bericht2();
-        SyncFunction();
+        SyncFunction();*/
+        await Mijn.Hoofd();
     }
     public static async Task Bericht1()
     {

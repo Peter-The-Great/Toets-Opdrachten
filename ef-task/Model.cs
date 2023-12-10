@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore.Sqlite;
 using System;
 using System.Collections.Generic;
 
+namespace ef_task;
+
 public class BloggingContext : DbContext
 {
     public DbSet<Blog> Blogs { get; set; }
@@ -12,9 +14,9 @@ public class BloggingContext : DbContext
 
     public BloggingContext()
     {
-        var folder = Environment.SpecialFolder.LocalApplicationData;
-        var path = Environment.GetFolderPath(folder);
-        DbPath = Path.Combine(path, "blogging.db");
+        var folder = Environment.CurrentDirectory;
+        DbPath = Path.Combine(folder, "blogging.db");
+        Database.EnsureCreated();
     }
     // The following configures EF to create a Sqlite database file in the
     // special "local" folder for your platform.
@@ -27,7 +29,7 @@ public class Blog
     public int BlogId { get; set; }
     public string? Url { get; set; }
 
-    public List<Post>? Posts { get; set; }
+    public List<Post>? Posts { get; } = new();
 }
 public class Post
 {
