@@ -9,12 +9,11 @@ class Program
 {
     public static async Task Main(string[] args)
     {
-        //Methode1();
-        //Methode2();
-        //Methode3();
-        //await Methode4Async();
-        //Methode5();
-        //HelloWorld.Hoofd();
+        Methode1();
+        Methode2();
+        Methode3();
+        await Methode4Async();
+        Methode5();
     }
     static void Method(Reptiel a)
     {

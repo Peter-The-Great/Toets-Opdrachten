@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Async", "Async\Async.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lock", "Lock\Lock.csproj", "{6FDB4414-CF64-4E90-ABFE-C8D618670E9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecflowConsole", "SpecflowConsole\SpecflowConsole.csproj", "{FE095E1D-F8C2-4484-8363-80B7C052BC6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpecflowConsole", "SpecflowConsole\SpecflowConsole.csproj", "{FE095E1D-F8C2-4484-8363-80B7C052BC6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTTP-Server", "HTTP-Server\HTTP-Server.csproj", "{61986C18-0846-499B-98A6-E41AFF8F83A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{FE095E1D-F8C2-4484-8363-80B7C052BC6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE095E1D-F8C2-4484-8363-80B7C052BC6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE095E1D-F8C2-4484-8363-80B7C052BC6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61986C18-0846-499B-98A6-E41AFF8F83A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61986C18-0846-499B-98A6-E41AFF8F83A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61986C18-0846-499B-98A6-E41AFF8F83A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61986C18-0846-499B-98A6-E41AFF8F83A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
