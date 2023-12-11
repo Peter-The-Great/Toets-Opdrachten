@@ -14,7 +14,7 @@ class Program
         //Methode3();
         //await Methode4Async();
         //Methode5();
-        HelloWorld.Hoofd();
+        //HelloWorld.Hoofd();
     }
     static void Method(Reptiel a)
     {
