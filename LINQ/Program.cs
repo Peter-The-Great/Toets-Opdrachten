@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Numerics;
 using System.IO;
+using LINQ;
 
 public class Movie
 {
@@ -69,7 +70,7 @@ public class Program
 
     static void Main(string[] args)
     {
-        Opdracht1();
+        /*Opdracht1();
         Console.WriteLine();
         Opdracht2();
         Console.WriteLine();
@@ -81,7 +82,8 @@ public class Program
         Console.WriteLine();
         Opdracht6();
         Console.WriteLine();
-        Opdracht7();
+        Opdracht7();*/
+        LinqVoorbeelden.Hoofd();
     }
 
     static void Opdracht1() // Toon van alle films de titel en het jaartal, gesorteerd op jaartal.
