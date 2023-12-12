@@ -3,9 +3,9 @@ using System.IO;
 using System.Text;
 using System.Net;
 using System.Threading.Tasks;
+using System.Net.Sockets;
 
-namespace HttpListenerExample
-{
+namespace HttpListenerExample;
     class HttpServer
     {
         public static HttpListener? listener;
@@ -72,22 +72,55 @@ namespace HttpListenerExample
                 resp.Close();
             }
         }
+    }
+class WebSocket
+{
+    public static async Task WebSocketOn()
+    {
+        TcpListener server = new TcpListener(IPAddress.Parse("127.0.0.1"), 8080);
+        server.Start();
+        Console.WriteLine("Server gestart op 127.0.0.1:8080. Wacht op verbinding...");
 
+        TcpClient client = await server.AcceptTcpClientAsync();
+        Console.WriteLine("Een client verbonden.");
 
-        public static void Main(string[] args)
-        {
-            // Create a Http server and start listening for incoming connections
-            listener = new HttpListener();
-            listener.Prefixes.Add(url);
-            listener.Start();
-            Console.WriteLine("Listening for connections on {0}", url);
+        NetworkStream stream = client.GetStream();
 
-            // Handle requests
-            Task listenTask = HandleIncomingConnections();
-            listenTask.GetAwaiter().GetResult();
+        byte[] buffer = new byte[1024];
+        int bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length);
+        string request = Encoding.UTF8.GetString(buffer, 0, bytesRead);
 
-            // Close the listener
-            listener.Close();
-        }
+        Console.WriteLine("Ontvangen bericht: " + request);
+
+        string response = "Hallo, wereld!";
+        byte[] data = Encoding.UTF8.GetBytes(response);
+
+        await stream.WriteAsync(data, 0, data.Length);
+        Console.WriteLine("Verzonden bericht: " + response);
+
+        client.Close();
+        server.Stop();
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        WebSocket.WebSocketOn().GetAwaiter().GetResult();
+        // Create a Http server and start listening for incoming connections
+        HttpServer.listener = new HttpListener();
+        HttpServer.listener.Prefixes.Add(HttpServer.url);
+        HttpServer.listener.Start();
+        Console.WriteLine("Listening for connections on {0}", HttpServer.url);
+
+        // Handle requests
+        Task listenTask = HttpServer.HandleIncomingConnections();
+        listenTask.GetAwaiter().GetResult();
+
+        // Close the listener
+        HttpServer.listener.Close();
+
+        // Start the WebSocket
     }
 }
