@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Sqlite;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace ef_task;
 
@@ -26,6 +27,7 @@ public class BloggingContext : DbContext
 
 public class Blog
 {
+    [Key]
     public int BlogId { get; set; }
     public string? Url { get; set; }
 
@@ -33,6 +35,7 @@ public class Blog
 }
 public class Post
 {
+    [Key]
     public int PostId { get; set; }
     public string? Title { get; set; }
     public string? Content { get; set; }

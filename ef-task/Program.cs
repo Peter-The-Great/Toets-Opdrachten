@@ -11,6 +11,13 @@ class Program
         // Note: This sample requires the database to be created before running.
         Console.WriteLine($"Database path: {db.DbPath}");
 
+        if (!db.Blogs.Any() || db.Posts.Any())
+        {
+            db.RemoveRange(db.Posts);
+            db.RemoveRange(db.Blogs.ToList());
+            db.SaveChanges();
+        }
+
         // Create
         Console.WriteLine("Inserting a new blog");
         db.Add(new Blog { Url = "http://blogs.msdn.com/adonet" });
@@ -29,8 +36,10 @@ class Program
         Console.WriteLine(blog.Url);
 
         // Delete
-        /*Console.WriteLine("Delete the blog");
+        Console.WriteLine("Delete the blog");
         db.Remove(blog);
-        db.SaveChanges();*/
+        db.RemoveRange(db.Posts);
+        db.RemoveRange(db.Blogs.ToList());
+        db.SaveChanges();
     }
 }

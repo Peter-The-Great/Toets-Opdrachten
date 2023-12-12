@@ -10,8 +10,8 @@ using ef_task;
 namespace ef_task.Migrations
 {
     [DbContext(typeof(BloggingContext))]
-    [Migration("20231210202049_newupdate")]
-    partial class newupdate
+    [Migration("20231212150510_new")]
+    partial class @new
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
