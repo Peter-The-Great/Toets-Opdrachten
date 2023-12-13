@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore.Sqlite;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ef_task;
 
@@ -24,7 +25,6 @@ public class BloggingContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder options)
         => options.UseSqlite($"Data Source={DbPath}");
 }
-
 public class Blog
 {
     [Key]

@@ -10,16 +10,38 @@ class LinqVoorbeelden
     public static void Hoofd()
     {
         Sample_Aggregate_Lambda();
+        Console.WriteLine();
+        
         Sample_All_Lambda();
+        Console.WriteLine();
+        
         Sample_Any_Lambda();
+        Console.WriteLine();
+        
         Sample_OfType_Lambda();
+        Console.WriteLine();
+        
         Sample_OrderBy_Lambda();
+        Console.WriteLine();
+        
         Sample_Single_Lambda();
+        Console.WriteLine();
+        
         Sample_Union_Lambda();
+        Console.WriteLine();
+        
         Sample_Distinct_Lambda();
+        Console.WriteLine();
+
         Sample_Max_Lambda();
+        Console.WriteLine();
+
         Sample_Empty_Lambda();
+        Console.WriteLine();
+        
         Normal_Query_Sample();
+        Console.WriteLine();
+        
         Sample_ToList_Lambda();
     }
 
@@ -50,9 +72,17 @@ class LinqVoorbeelden
     {
         var empty = Enumerable.Empty<string>();
         // To make sequence into an array use empty.ToArray()
-
-        Console.WriteLine("Sequence is empty:");
-        Console.WriteLine(empty.Count() == 0);
+        var emptyArray = empty.ToList();
+        if (empty.Any())
+        {
+            Console.WriteLine("Sequence is not empty:");
+            foreach (var item in empty)
+                Console.WriteLine(item);
+        }else
+        {
+            Console.WriteLine("Sequence is empty:");
+            Console.WriteLine(empty.Count() == 0);
+        }
     }
     static void Sample_Max_Lambda()
     {
@@ -159,7 +189,7 @@ class LinqVoorbeelden
         int[] numbers = { 1, 2, 3, 4, 5 };
 
         // Bereken de som van alle getallen met behulp van Aggregate
-        int sum = numbers.Aggregate((acc, x) => acc + x);
+        int sum = numbers.Aggregate((a, b) => a + b);
         int sumWithSeed = numbers.Aggregate(0, (acc, x) => acc + x);
 
         Console.WriteLine($"De som van de getallen is: {sum}");

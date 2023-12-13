@@ -9,11 +9,17 @@ class Program
 {
     public static async Task Main(string[] args)
     {
-        Methode1();
-        Methode2();
-        Methode3();
-        await Methode4Async();
-        Methode5();
+        //Methode1();
+        //Methode2();
+        //Methode3();
+        //await Methode4Async();
+        //Methode5();
+        //Contra.Test();
+        foreach (var item in YEID.GenerateNumbers())
+        {
+            Console.WriteLine(item);
+        }
+
     }
     static void Method(Reptiel a)
     {

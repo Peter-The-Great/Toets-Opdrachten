@@ -36,3 +36,13 @@ class Vogel<T, S>(T naam, S gewicht, S leeftijd)
     public S Leeftijd { get; set; } = leeftijd;
 
 }
+
+class YEID{
+    public static IEnumerable<int> GenerateNumbers()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            yield return i; // Geef elk getal op
+        }
+    }
+}
